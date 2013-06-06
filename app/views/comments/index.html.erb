@@ -1,0 +1,43 @@
+<html>
+<head>
+	<%= stylesheet_link_tag 'comments' %>
+	<title>Cecil Crain:  Project-Comments from Register Users</title>
+</head>
+<body>
+
+
+	<div id="wrapper">
+		<div id="upper_bar">
+ 			<div>
+ 				<h2>Welcome to my Website!</h2>
+<!-- 				<h3>Cecil B. Crain, Esq.</h3>
+ -->			</div>	
+			<ul>
+				<li><a href="/users/">HOME</a></li>
+				<li><a href="/authors/index">ABOUT THE AUTHOR</a></li>
+				<li><a href="http://www.kickstarter.com" target="_blank">KICKSTARTER</a></li>
+				<li><a href="/users/new">READ THE FIRST CHAPTER</a></li>
+			</ul>
+		</div>
+
+		<div id="main_content">
+			<div id="book_cover">
+				<img src="/images/cecil_crain.jpg">
+			</div>
+			<div id="thanks">
+				<h1>Thanks to everyone who registered with my web site!</h1><br>
+				<h2>Everyone will receive an email when Shattered Justice is available.</h2><br><br><br><br>
+
+				<h3>I would like to thank the two most important women in my life, my wife and my mother, for their unconditional support and enthusiasm when I first mentioned to them my wild idea of writing a novel. Without their love, advice and support, I would not have the courage, time, ability and money to pursue this endeavor. I would also like to thank all those people who offered their advice and expertise to me during the writing of this novel. - Cecil Crain</h3>
+
+				<br><br>
+			</div>
+
+
+				<% @users.each do |user| %>
+					<p><%= user.created_at.strftime("%B %d, %Y") %> : <%= user.first_name %> <%= user.last_name %> ------ <%= user.comment %> </p><br><br>
+				<% end %>
+
+		</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!-- <h1>Display all users</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+	<% @users.each do |user| %>
+		<p><%= user.first_name %> <%= user.last_name %> <%= user.email_address %></p>
+	<% end %> -->
+
+<html>
+<head>
+	<%= stylesheet_link_tag 'home' %>
+	<title>Cecil Crain:  Project: Home Page</title>
+</head>
+	<div id="wrapper">
+		<div id="upper_bar">
+ 			<div>
+ 				<h2>Welcome to my Website!</h2>
+				<h3>Cecil B. Crain, Esq.</h3>
+			</div>	
+			<ul>
+				<li><a href="/authors/index">ABOUT THE AUTHOR</a></li>
+				<li><a href="http://www.kickstarter.com" target="_blank">KICKSTARTER</a></li>
+				<li><a href="/comments">REVIEWS</a></li>
+				<li><a href="/users/new">READ THE FIRST CHAPTER</a></li>
+			</ul>
+		</div>
+
+		<div id="main_content">
+
+			<div id="revenge">
+				<h2>Revenge is not a crime.</h2><br /><br />
+				<p>Fresh out of law school, a young, eager attorney, ready to
+				make his mark in personal injury litigation uncovers the ugly,
+				dark secrets and the truth behind the billion dollar world of
+				asbestos litigation. He soon discovers the corruption extends
+				beyond the usual suspects and infiltrates every individual at
+				every step along the way. Greed takes control of his life and
+				he must chose between his belief and trust in the judicial
+				system and whether he wants to live or die. </p>
+			</div>
+			<div id="character">
+				<h2>Want to be a character in the novel <span class="italic">Shattered Justice</span>?</h2><br>
+				<p>Visit <a href="http://www.kickstarter.com">KICKSTARTER</a></li>
+to see how you can become a character in the novel.<br>PLUS!  Receive a copy of the ebook with your support of the <span class="italic">Shattered Justice</span>  project.<br>Together, we can make the dream come alive.</h2>
+				
+			</div>
+
+
+			<div class="clear"></div>
+
+
+
+
+			<div id="available">
+					<h4>Available December 2013</h4>
+					<h6>This web site was designed and created by Ninja CBC from Coding DOJO.<h6>
+			</div>
+		</div>
+
+
+		</div>
+
+	</div>
+
+</body>
+</html>

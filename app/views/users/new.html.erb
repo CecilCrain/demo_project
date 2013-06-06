@@ -1,0 +1,51 @@
+<html>
+<head>
+	<%= stylesheet_link_tag 'new' %>
+	<%= stylesheet_link_tag 'application' %>
+
+	<title>Cecil Crain:  Project: Register to Read First Chapter</title>
+</head>
+<body>
+
+	<div id="wrapper">
+		<div id="upper_bar">
+ 			<div>
+ 				<h2>Welcome to my Website!</h2>
+				<h3>Cecil B. Crain, Esq.</h3>
+			</div>	
+			<ul>
+				<li><a href="/users/">HOME</a></li>
+				<li><a href="/authors/index">ABOUT THE AUTHOR</a></li>
+				<li><a href="http://www.kickstarter.com" target="_blank">KICKSTARTER</a></li>
+				<li><a href="/comments">REVIEWS</a></li>
+
+			</ul>
+		</div>
+
+		<div id="main_content">
+			<div class="clear">
+		</div>
+
+	</div>
+
+	<div id="registration_form">
+		
+		<h2>Fresh out of law school, a young, eager attorney, ready to make his mark in personal injury litigation uncovers the ugly, dark secrets and the truth behind the billion dollar world of asbestos litigation. He soon discovers the corruption extends beyond the usual suspects and infiltrates every individual at every step along the way. Greed takes control of his life and he must chose between his belief and trust in the judicial system and whether he wants to live or die.</h2><br><br>
+
+		<h1>Register below to read the first chapter of <span class="italic">Shattered Justice.</span></h1>
+		<h2>Everyone who registers will receive an email when the novel is available.</h2>
+
+		
+	</div>
+	<div id="input_area">
+	<%= simple_form_for @user do |f| %>
+     <%= f.input :first_name %>
+       <%= f.input :last_name %>
+       <%= f.input :email_address %>
+      <%= f.button :submit %>
+    <% end %>
+		</div>
+	</div>
+</body>
+
+</html>

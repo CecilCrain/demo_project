@@ -1,0 +1,48 @@
+<html>
+<head>
+	<%= stylesheet_link_tag 'admin' %>
+	<title>Cecil Crain:  Project-Comments from Register Users</title>
+</head>
+<body>
+
+
+	<div id="wrapper">
+		<div id="upper_bar">
+ 			<div>
+ 				<h2>Welcome Admin</h2>
+			</div>	
+			<ul>
+				<li><a href="/users/">HOME</a></li>
+				<li><a href="/authors/index">ABOUT THE AUTHOR</a></li>
+				<li><a href="http://www.kickstarter.com" target="_blank">KICKSTARTER</a></li>
+				<li><a href="/users/new">READ THE FIRST CHAPTER</a></li>
+			</ul>
+		</div>
+
+		<div id="main_content">
+			<div id="book_cover">
+				<img src="/images/cecil_crain.jpg">
+			</div>
+			<div id="admin">
+				<h1>Admin: login and delete and/or reply to the comments.</h1>
+			</div>
+
+			<div id="login_form">
+				<form action="/users" method="post">
+				  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				  <input type="text" name="admin_login" placeholder="Login Name" /><br>
+				  <input type="password" name="password" placeholder="Password" /><br>
+
+				  <input type="submit" value="Login"/>
+				</form>
+
+			</div>
+
+
+<!-- 				<% @users.each do |user| %>
+					<p><%= user.created_at.strftime("%B %d, %Y") %> : <%= user.first_name %> <%= user.last_name %> ------ <%= user.comment %> </p><br><br>
+				<% end %> -->
+
+		</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+1.  Create a new project:  Done.
+
+	rails new controller
+
+2.  Create new controller(s):  Done
+
+	rails g controller Users index create new
+	rails g controller Posts index create new
+
+3.  Create new layouts (users.html.erb, posts.html.erb):
+	Done
+
+4.	posts.js and posts.css were automatically created.
+
+5.  Create a form with plain HTML for each new view:  Done
+
+	<form action="/posts" method="post">
+	  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	  <input type="text" name="name" placeholder="name" />
+	  <input type="text" name="content" placeholder="content" />
+	  <textarea name="content"></textarea>
+	  <input type="submit" value="Submit a comment" />
+	</form>
+
+	<form action="/users" method="post">
+	  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	  <input type="text" name="name" placeholder="name" />
+	  <input type="text" name="content" placeholder="content" />
+	  <textarea name="content"></textarea>
+	  <input type="submit" value="Submit a comment" />
+	</form>
+
+
+6.  Modify layouts so that the view file can pass a parameter/text to the layout:  
+
+	Display different titles for each view pages:  Done:
+	changed headers in each layout file.  
+
+7.  Create a new model called User:  Done
+
+	rails g model User first_name:string last_name:string email_address:string password:string
+
+8.  Create a few user records:
+
+	User.new(:first_name=>"Cecil",:last_name=>"Crain",:email_addres=>"cecil@yahoo.com",:password=>"123".save
+
+9.	Get all users records:
+
+	In USERS CONTROLLER:
+
+	class UsersController < ApplicationController
+	  def index
+	  	@users = User.all
+	  end
+
+	  def create
+	  end
+
+	  def new
+	  end
+	end
+
+
+	Pass the users information to the view file:
+
+	<h1>Display all users</h1>
+	<p>Find me in app/views/users/index.html.erb</p>
+		<% @users.each do |user| %>
+		<p><%= user.first_name %> <%= user.last_name %> <%= user.email_address %></p>
+	<% end %>
+
+10.  Create form in users/new where someone can create a new user account:
+
+class UsersController < ApplicationController
+  def index
+  	@users = User.all
+  end
+
+  def create
+  end
+
+<h1>Add a new user</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+<%= @user.errors.full_messages if @user.errors.any? %>
+  	<form action="/users" method="post">
+	  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	  <!-- <input name="_method" type="hidden" value="PUT"/> -->
+	  <input type="text" name="first_name" placeholder="First Name" />
+	  <input type="text" name="last_name" placeholder="Last Name" />
+	  <input type="text" name="email_address" placeholder="Email Address" />
+	  <input type="password" name="password" placeholder="Password" />
+  	  <input type="password" name="confirm_password" placeholder="Confirm Password" />
+	  <input type="submit" value="Submit to Register" />
+	</form>
+
+  
+end
+
+11.  Validate the form and display necessary error messages if the form is invalid or display a success message that says the form looks valid:
+
+	class User < ActiveRecord::Base
+		validates :first_name, :last_name, :email_address, :password, :presence => true
+		validates :email_address, :uniqueness => true
+	end
+
+12. 
